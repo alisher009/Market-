@@ -1,0 +1,224 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    outline: none;
+ font-family: ;
+    text-decoration: none;
+}
+
+
+img {
+    margin-right: 20px;
+}
+
+.active {
+    all: unset;
+    padding: 10px 15px;
+    background-color: #2b41f0;
+    color: white;
+    font-size: 18px;
+    border-radius: 14px;
+}
+
+
+a {
+    color: #fff;
+}
+
+
+
+form {
+    width: 500px;
+    margin: 30px auto;
+}
+
+h3{
+    font-size: 24px !important;
+    font-family: 'Gilroy' serif;
+}
+h2 {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 59px;
+    text-align: center;
+}
+.flx {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    color: white;
+    font-size: 28px;
+}
+.price::before {
+    background-image: url('./assets/icons/currency-dollar.svg');
+    
+    background-repeat: no-repeat;
+    background-size: 20px;
+    display: inline-block;
+    width: 18px;
+    height: 19px;
+    font-size: 24px !important;
+    content: '';
+
+}
+
+.price {
+    font-size: 24px !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+
+}
+.rate {
+    font-size: 24px !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+}
+.countt{
+    font-size: 24px !important;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif !important;
+ 
+    gap: -10px !important;
+    /* gap:20px  */
+}
+.rate::before {
+    background-image: url('./assets/icons/star.svg');
+    background-repeat: no-repeat;
+    background-size: 20px;
+    display: inline-block;
+    width: 28px;
+    height: 19px;
+    margin-top: 5px;
+    content: "";
+}
+.countt::before {
+    background-image: url('./assets/icons/box.svg');
+    margin-left: -10px;
+    background-repeat: no-repeat;
+    background-size: 20px;
+    display: inline-block;
+    margin-top: 5px;
+    width: 28px;
+    height: 19px;
+    content: '';
+    margin-left: 5px;
+}
+
+input {
+    width: 321px;
+    height: 42px;
+    border: 2px solid #007FFF;
+    border-radius: 10px;
+    padding: 0 20px;
+
+}
+
+button {
+    width: 155px;
+    height: 42px;
+    background: none;
+    border-radius: 10px;
+    border: 1px solid #000;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 90%;
+    margin: 50px auto;
+    gap: 30px
+}
+
+
+.item {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border: 1px solid black;
+}
+
+.item .top {
+    width: 100%;
+    height: 200px;
+}
+.item .top img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.item .bottom {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 14px;
+    background-color: black;
+    width: 100%;
+    height: 60%;
+    min-height: 250px;
+}
+.item .bottom h3 {
+    font-size: 24px;
+    color: white;
+    font-weight: 600;
+}
+.item .bottom p {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.56);
+}
+.item .bottom .btn {
+    /* padding: 17px 30px; */
+    border-radius: 14px;
+    color: black;
+    background-color: white;
+    width: 100%;
+    font-size: 18px;
+}
+
+.active-btn {
+    background-color: #007FFF !important;
+    color: white !important;
+}
+
+.sliceshow{
+    background-color: #007FFF !important;
+    color: white !important;
+    border: none;
+    cursor: pointer;
+
+}
+.showall{
+    background-color: #007FFF !important;
+    color: white !important;
+    border: none;
+    cursor: pointer;
+}
+.modal {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-color:rgb(249, 241, 241);
+    overflow:scroll ;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(.2);    
+    opacity: 0;
+    transition: all .5s ease 0s  ;
+    margin-top: -900px;
+    
+}
+.imgOpen {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: 1400px;
+}
+.exitShop {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    top: 30px;
+    left: 1400px;
+}
