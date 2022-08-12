@@ -1,9 +1,10 @@
 import products from './modules/data.js'
 let container = document.querySelector('.container')
 let count = document.querySelector('.count')
+let bg = document.querySelector('.bg' )
 let cart = []
 
-
+   count.innerHTML = cart.length
 function reload(arr, place, isCart = false) { 
     place.innerHTML = ''
     for(let item of arr) {
@@ -39,7 +40,7 @@ function reload(arr, place, isCart = false) {
         button.innerHTML = isCart === true ? "delete from cart" : "В избранное"
 
 
-        if(cart.includes(item.id)) {
+        if (cart.includes(item.id)) {
             button.classList.add('active-btn')
             button.innerHTML = "Добавлено"
         }
@@ -52,9 +53,13 @@ function reload(arr, place, isCart = false) {
 
         button.onclick = () => {
             if(cart.includes(item.id)) {
-                cart.splice( cart.indexOf(item.id), 1)          
+                cart.splice( cart.indexOf(item.id), 1)
+            creatReload( createArr())
+
             } else {
                 cart.push(item.id);
+            creatReload( createArr())
+
             }
 
             count.innerHTML = cart.length
@@ -82,7 +87,7 @@ function showCartsElems() {
     for(let item of products) {
         for(let elem of cart) {
             if(item.id === elem) {
-                newCart.push(item)
+                // newCart.push(item)
             }
         }
     }
@@ -126,3 +131,91 @@ exitShop.onclick = () => {
     document.body.style.overflow = ""
 
 }
+
+
+
+function creatReload (arr , isCart = false) {
+    bg.innerHTML = ''
+    for(let item of arr ) {
+        let wrapper = document.createElement('div')
+        let left = document.createElement('div')
+        let right = document.createElement('div')
+        let img = document.createElement('img')
+        let info = document.createElement('h3')
+        let cash = document.createElement('div')
+        let price = document.createElement('span')
+        let counter = document.createElement('div')
+        let inc = document.createElement('button')
+        let dec = document.createElement('button')
+        let count = document.createElement('span')
+        let button = document.createElement('button')
+
+
+
+        wrapper.classList.add('wrapper')
+        left.classList.add('left')
+        right.classList.add('right')
+        img.classList.add('img')
+        info.classList.add('info')
+        cash.classList.add('cash')
+        price.classList.add('price')
+        counter.classList.add('counter')
+        inc.classList.add('inc')
+        dec.classList.add('dec')
+        count.classList.add('count')
+        button.classList.add('close')
+
+
+
+        wrapper.append(left,right)
+        left.append(img,info)
+        counter.append(inc,count,dec)
+        right.append( price ,counter ,close )
+        bg.append(wrapper)
+
+
+        img.src =item.image
+
+        info.innerHTML = item.title
+        price.innerHTML =  Math.floor( item.price)
+        inc.innerHTML = '+'
+        dec.innerHTML = '-'
+        count.innerHTML = "0"
+        button.innerHTML = 'x'
+     
+        //   count = 0
+
+          inc.onclick = () =>{
+         if(item.price + price) {
+         price.innerHTML = + item.price
+            count++
+            console.log('++');
+         }
+          }
+
+
+    }
+}
+
+
+
+
+
+function createArr() {
+    let temp = []
+    for(let item  of products) {
+        for(let item2 of cart) {
+            if(item.id === item2) {
+                temp.push(item)
+            }
+        }
+    }
+    return temp
+}
+
+creatReload ( createArr())
+
+
+
+
+
